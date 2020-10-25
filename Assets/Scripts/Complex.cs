@@ -9,12 +9,13 @@ namespace ComplexMath
     // Complex num
     public class Complex
     {
-        public double r;
-        public double i;
+        public float r;
+        public float i;
 
-        public Complex(double r, double i)
+        public Complex(float r, float i)
         {
             this.r = r;
+            this.i=i;
         }
 
 
@@ -24,7 +25,7 @@ namespace ComplexMath
             return new Complex(a.r - b.r, a.i - b.i);
         }
 
-        public static Complex operator -(Complex a, double b)
+        public static Complex operator -(Complex a, float b)
         {
             return new Complex(a.r - b, a.i);
         }
@@ -34,26 +35,26 @@ namespace ComplexMath
             return new Complex(a.r + b.r, a.i + b.i);
         }
 
-        public static Complex operator +(Complex a, double b)
+        public static Complex operator +(Complex a, float b)
         {
             return new Complex(a.r + b, a.i);
         }
 
         public static Complex operator *(Complex a, Complex b)
         {
-            double x, y;
+            float x, y;
 
             x = a.r * b.r - a.i * b.i;
             y = a.r * b.i + a.i * b.r;
             return new Complex(x, y);
         }
 
-        public static Complex operator *(Complex a, double b)
+        public static Complex operator *(Complex a, float b)
         {
             return new Complex(a.r * b, a.i * b);
         }
 
-        public double Module()
+        public float Module()
         {
             return Mathf.Sqrt((float)(r * r + i * i));
         }
